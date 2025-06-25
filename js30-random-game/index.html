@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Random game</title>
+  </head>
+  <body>
+    <section>
+      <div class="section-inner">
+        <div class="section-column">
+          <h1>2048</h1>
+          <h2>How to play</h2>
+          <div class="section-text">
+            Use your arrow keys to move the tiles. When two tiles with the same
+            number touch, they merge into one!
+          </div>
+        </div>
+        <div class="section-column _size-2">
+          <div class="game__container" id="gameContainer">
+            <!-- <div class="game__block" data-x="0" data-y="0" data-number="2"><span>2</span></div>-->
+          </div>
+
+          <div class="grid">
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+          </div>
+        </div>
+
+        <div class="section-column">
+          <div class="game__controls">
+            <div class="game__restart-button button">New game</div>
+            <div class="game__score">
+              <h2>Score: <span id="gameScore">0</span></h2>
+            </div>
+            <h3>Last results:</h3>
+            <div class="game__results-history"></div>
+          </div>
+        </div>
+
+        <dialog id="popup">
+          <div class="popup">
+            <div class="popup-inner">
+              <div class="popup-message"></div>
+              <div class="popup-button button" id="closePopup">
+                Start new game
+              </div>
+            </div>
+          </div>
+        </dialog>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-inner">
+        <a class="footer-item" href="https://github.com/UliyaKomarova"
+          >GitHub</a
+        >
+        <div class="footer-item">2024</div>
+        <a
+          class="footer-item _rs-school _icon"
+          href="https://rs.school/courses/javascript-preschool-ru"
+        ></a>
+      </div>
+
+      <script src="script.js"></script>
+    </footer>
+  </body>
+</html>

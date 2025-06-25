@@ -1,0 +1,400 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff;
+}
+
+html,
+body {
+  min-height: 100vh;
+  /* overflow: hidden; */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #232323;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 25px;
+  padding: 0 0 20px 0;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 0 40px 0;
+  background-color: #996dce;
+  text-shadow: 1px 1px 2px #6b5a7e;
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.button:hover {
+  background-color: #c5aae6;
+}
+
+section,
+.footer-inner {
+  width: 1200px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  flex: 1 0 auto;
+  padding: 50px 0;
+}
+
+.section-inner {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 50px;
+}
+
+.section-column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 33%;
+  flex-shrink: 1;
+}
+
+.section-text {
+  font-size: 18px;
+  line-height: 35px;
+  text-align: justify;
+}
+
+.section-column._size-2 {
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+.game__controls {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.game__score {
+  margin: 0 0 20px 0;
+}
+
+.game__score span {
+  letter-spacing: 1px;
+}
+
+.game__results-history {
+  padding: 15px 0 0 0;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: justify;
+}
+
+.grid,
+.game__container {
+  width: 500px;
+  height: 500px;
+}
+
+.game__container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.game__block {
+  display: flex;
+  position: absolute;
+  width: 25%;
+  height: 25%;
+  font-size: 40px;
+  font-weight: 300;
+  padding: 5px;
+  user-select: none;
+  transition: all 0.4s;
+  z-index: 1;
+}
+
+.game__block[data-x="0"][data-y="0"] {
+  top: 0;
+  left: 0;
+}
+
+.game__block[data-x="0"][data-y="25"] {
+  top: 25%;
+  left: 0;
+}
+
+.game__block[data-x="0"][data-y="50"] {
+  top: 50%;
+  left: 0;
+}
+
+.game__block[data-x="0"][data-y="75"] {
+  top: 75%;
+  left: 0;
+}
+
+.game__block[data-x="25"][data-y="0"] {
+  top: 0;
+  left: 25%;
+}
+
+.game__block[data-x="25"][data-y="25"] {
+  top: 25%;
+  left: 25%;
+}
+
+.game__block[data-x="25"][data-y="50"] {
+  top: 50%;
+  left: 25%;
+}
+
+.game__block[data-x="25"][data-y="75"] {
+  top: 75%;
+  left: 25%;
+}
+
+.game__block[data-x="50"][data-y="0"] {
+  top: 0%;
+  left: 50%;
+}
+
+.game__block[data-x="50"][data-y="25"] {
+  top: 25%;
+  left: 50%;
+}
+
+.game__block[data-x="50"][data-y="50"] {
+  top: 50%;
+  left: 50%;
+}
+
+.game__block[data-x="50"][data-y="75"] {
+  top: 75%;
+  left: 50%;
+}
+
+.game__block[data-x="75"][data-y="0"] {
+  top: 0%;
+  left: 75%;
+}
+
+.game__block[data-x="75"][data-y="25"] {
+  top: 25%;
+  left: 75%;
+}
+
+.game__block[data-x="75"][data-y="50"] {
+  top: 50%;
+  left: 75%;
+}
+
+.game__block[data-x="75"][data-y="75"] {
+  top: 75%;
+  left: 75%;
+}
+
+.game__block span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  transition: all 0.4s;
+}
+
+.game__block[data-number="2"] span {
+  background-color: #310b5f;
+}
+.game__block[data-number="4"] span {
+  background-color: #6b5a7e;
+}
+.game__block[data-number="8"] span {
+  background-color: #0b6039;
+}
+.game__block[data-number="16"] span {
+  background-color: #65d0a0;
+}
+.game__block[data-number="32"] span {
+  background-color: #9d796b;
+}
+.game__block[data-number="64"] span {
+  background-color: #ffa07c;
+}
+.game__block[data-number="128"] span {
+  background-color: #756d0d;
+}
+.game__block[data-number="256"] span {
+  background-color: #75290d;
+}
+.game__block[data-number="512"] span {
+  background-color: #c5aae6;
+}
+.game__block[data-number="1024"] span {
+  background-color: #a5e7c9;
+}
+.game__block[data-number="2048"] span {
+  background-color: #9d996b;
+}
+
+.grid {
+  position: relative;
+  z-index: 0;
+  display: grid;
+  grid-template-rows: repeat(4, 25%);
+  grid-template-columns: repeat(4, 25%);
+  margin-left: -2px;
+  margin-top: -502px;
+  border: 2px solid #996dce;
+  box-sizing: content-box;
+}
+
+.grid-cell {
+  border: 1px dashed #996dce;
+}
+
+dialog {
+  height: 200px;
+  z-index: 1000;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+
+dialog::backdrop {
+  background-image: linear-gradient(
+    130deg,
+    #123e66,
+    #593273 41.07%,
+    #623d45 76.05%
+  );
+  opacity: 0.7;
+}
+
+.popup-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 45px;
+}
+
+.popup-message {
+  font-size: 70px;
+  user-select: none;
+}
+
+.popup-button {
+  margin: 0;
+}
+
+footer {
+  flex: 0 0 auto;
+  border-top: 2px solid #6b5a7e;
+  /* background-color: #996dce; */
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 0;
+  padding: 10px 0;
+}
+
+.footer-item {
+  display: inline-block;
+}
+
+.footer-item._rs-school {
+  width: 30px;
+  height: 30px;
+  background: url("../assets/rss-logo.svg") 0 0 no-repeat;
+  object-fit: contain;
+}
+
+@media (max-width: 1250px) {
+  section,
+  .footer-inner {
+    width: auto;
+    min-width: 100%;
+    max-width: 1200px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .section-inner {
+    flex-direction: column;
+  }
+
+  .section-column {
+    width: 100%;
+  }
+
+  .section-column._size-2 {
+    align-items: center;
+  }
+
+  .game__controls {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  .game__controls h3,
+  .game__results-history {
+    width: 100%;
+  }
+
+  .game__score {
+    order: -1;
+  }
+}
